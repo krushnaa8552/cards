@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './roomCard.css';
-import { API_URL } from '../../api.JS';
+import { API_URL } from '../../api.js';
 
 const HAND_SIZES = [7, 10, 13];
 
