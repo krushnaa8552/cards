@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ── Lobby.css ─────────────────────────────────────────────────────────── */
+
+.lobby-root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Mono", monospace;
+  overflow: hidden;
+}
+
+/* dark background */
+.lobby-bg {
+  position: fixed;
+  inset: 0;
+  background-color: #000000;
+  z-index: 0;
+}
+
+.lobby-bg::after {
+  content: none;
+}
+
+/* ── Panel ──────────────────────────────────────────────────────────────── */
+
+.lobby-panel {
+  position: relative;
+  z-index: 1;
+  width: 440px;
+  max-width: calc(100vw - 2rem);
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.lobby-header {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.lobby-tag {
+  display: none;
+}
+
+.lobby-code {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.5rem;
+  text-shadow: none;
+}
+
+.room-code {
+  font-size: 1.5rem;
+  font-family: "Space Mono", monospace;
+}
+
+.lobby-code span {
+  color: #e04040;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.lobby-conn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.lobby-conn--on {
+  color: #4caf82;
+}
+
+.lobby-conn-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* ── Players list ───────────────────────────────────────────────────────── */
+
+.lobby-players {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.lobby-player {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 5px solid #7B241C;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+.lobby-player--self {
+  border-left-color: #7B241C;
+  background: #0d0d0d;
+}
+
+.lobby-player-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4040cc;
+}
+
+.lobby-player-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lobby-player-name {
+  flex: 1;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lobby-player-status {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.lobby-player-status--ready {
+  color: #e87040;
+}
+
+.lobby-empty {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  letter-spacing: 0.06em;
+  padding: 1rem 0;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────────────── */
+
+.lobby-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lobby-count {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.lobby-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.lobby-btn {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.55rem 1.25rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.lobby-btn:active { transform: scale(0.97); }
+.lobby-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.lobby-btn--ready {
+  background: #7B241C;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+}
+
+.lobby-btn--ready:hover:not(:disabled) {
+  background: #e85040;
+}
+
+.lobby-btn--start {
+  background: #d94030;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.lobby-btn--start:hover:not(:disabled) {
+  background: #e85040;
+}
+
+.lobby-btn--waiting {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-style: italic;
+  cursor: not-allowed;
+}
+
+/* ── Toasts ─────────────────────────────────────────────────────────────── */
+
+.lobby-toasts {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+}
+
+.lobby-toast {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  background: rgba(20, 20, 20, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ccc;
+  animation: toast-in 0.25s ease;
+}
+
+.lobby-toast--info    { border-left: 3px solid #4caf82; }
+.lobby-toast--warn    { border-left: 3px solid #c9a84c; }
+.lobby-toast--error   { border-left: 3px solid #e05555; }
+.lobby-toast--success { border-left: 3px solid #4caf82; }
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

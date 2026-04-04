@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 12px;
+}
+
+.btn-primary, .btn-secondary {
+  width: 100%;
+  max-width: 300px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Space Mono', monospace;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #8b0000;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #a00000;
+}
+
+.btn-secondary {
+  background-color: #111111;
+  color: #a0a0a0;
+  border: 1px solid #333333;
+}
+
+.btn-secondary:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
