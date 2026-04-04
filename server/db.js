@@ -6,7 +6,7 @@ dotenv.config();
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: 
-        PerformanceObserverEntryList.env.NODE_ENV === "production"
+        process.env.NODE_ENV === "production"
         ? { rejectUnauthorized: false }
         : false, 
 });
