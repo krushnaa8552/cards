@@ -12,8 +12,9 @@ import SelfPanel from "./components/SelfPanel";
 import DeclareModal from "./components/DeclareModal";
 import ToastContainer from "./components/ToastContainer";
 import "./Room.css";
+import { API_URL } from "../../api.js";
 
-const SERVER = "http://localhost:5000";
+const SERVER = `${API_URL}`;
 
 const Room = () => {
   const { roomCode } = useParams();

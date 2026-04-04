@@ -5,6 +5,11 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import roomRouter from './routes/roomRoutes.js';
 import { registerSocketHandlers } from './socket/socketHandler.js';
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const PORT = process.env.SERVER_PORT
 
 console.log("starting");
 
@@ -28,4 +33,4 @@ app.set('io', io);
 
 registerSocketHandlers(io);
 
-httpServer.listen(5000, () => console.log('server running on port 5000'));
+httpServer.listen(PORT, () => console.log(`server running on port ${PORT}`));

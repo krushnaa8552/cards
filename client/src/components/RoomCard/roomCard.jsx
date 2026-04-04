@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './roomCard.css';
+import { API_URL } from '../../api.JS';
 
 const HAND_SIZES = [7, 10, 13];
 
@@ -62,7 +63,7 @@ const RoomCard = ({ mode }) => {
         setError('');
         try {
             const pending = JSON.parse(localStorage.getItem('pendingRoom') || '{}');
-            const res = await fetch('http://localhost:5000/api/room/start-game', {
+            const res = await fetch(`${API_URL}/api/room/start-game`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -103,7 +104,7 @@ const RoomCard = ({ mode }) => {
         setLoading(true);
         setError('');
         try {
-            const res = await fetch('http://localhost:5000/api/room/join-game', {
+            const res = await fetch(`${API_URL}/api/room/join-game`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ code: code.trim().toUpperCase(), username: username.trim(), pfp })
