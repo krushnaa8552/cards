@@ -7,7 +7,7 @@ const Landing = () => {
     return (
         <div>
             <div>
-                <buttom className='rules-btn' onClick={() => navigate('/how-to-play')} >Rules</buttom>
+                {/* <buttom className='rules-btn' onClick={() => navigate('/how-to-play')} >Rules</buttom> */}
             </div>
             <div className="landing">
                 <button className="btn-primary" onClick={() => navigate('/start-game')}>

@@ -1,5 +1,5 @@
 import express from 'express';
-import { startGame, joinGame } from '../controllers/roomController.js'
+import { startGame, joinGame } from '../controllers/lobbyController.js'
 
 const lobbyRouter = express.Router();
 

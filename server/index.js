@@ -26,7 +26,7 @@ const io = new Server(httpServer, {
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/room', roomRouter);
+app.use('/api/room', lobbyRouter);
 
 // Attach io to app so routes/controllers can emit if needed
 app.set('io', io);
