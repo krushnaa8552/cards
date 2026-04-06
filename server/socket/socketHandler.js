@@ -4,7 +4,7 @@ this is the socketHandler file that i will try to understand
 
 import db from "../db.js";
 import { buildDeck, shuffleDeck, dealToPlayers, generateSeed } from "../gameService.js";
-import { serverValidateDeclare } from "../../shared/rummyValidator.js";
+import { serverValidateDeclare } from "../rummyValidator.js";
 
 const socketMeta = new Map(); //connecting the socketid to a players data
 

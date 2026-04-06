@@ -1,17 +1,3 @@
-/*
- * rummyValidator.js
- *
- * Supports hand sizes: 7, 10, 13 (+ 1 if a card was drawn, the last card is ignored).
- *
- * Card object shape: { id, rank, suit, joker? }
- *   rank: 'A' | '2'–'10' | 'J' | 'Q' | 'K'
- *   suit: 'spades' | 'hearts' | 'diamonds' | 'clubs'
- *   joker: true  (for joker cards)
- *
- * Ace: treated as both low (rank 1) and high (rank 14) to allow
- *   A-2-3  and  Q-K-A  sequences.
- */
-
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const RANK_VALUE = {

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
-import { validateRummyHand } from "../../../../shared/rummyValidator.js";
+import { validateRummyHand } from "../../rummyValidator.js";
 import { useToast } from "./components/useToast";
 import { pfpSrc } from "./utils/pfpSrc";
 import RoomBackground from "./components/RoomBackground";
