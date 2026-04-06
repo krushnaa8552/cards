@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-import roomRouter from './routes/roomRoutes.js';
+import lobbyRouter from './routes/lobbyRoutes.js';
 import { registerSocketHandlers } from './socket/socketHandler.js';
 import dotenv from "dotenv";
 

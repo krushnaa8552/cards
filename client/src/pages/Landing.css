@@ -9,6 +9,13 @@
   gap: 12px;
 }
 
+.rules-btn {
+  display: flex;
+  justify-content: end;
+  padding: 20px;
+  cursor: pointer;
+}
+
 .btn-primary, .btn-secondary {
   width: 100%;
   max-width: 300px;

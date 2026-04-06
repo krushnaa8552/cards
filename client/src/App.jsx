@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Landing from "./pages/Landing.jsx";
-import RoomCard from './components/RoomCard/roomCard.jsx';
+import RoomCard from './components/LoginCard/LoginCard.jsx';
 import Room from './components/Room/Room.jsx';
 import Lobby from './components/Lobby/Lobby.jsx';
 import GameOver from './components/GameOver/GameOver.jsx';
@@ -10,9 +10,9 @@ const AppRoutes = () => {
   const navigate = useNavigate();
 
   const onJoin = (roomCode, username, { playerId, guestToken } = {}) => {
-    localStorage.setItem('roomCode',   roomCode);
-    localStorage.setItem('username',   username);
-    if (playerId)   localStorage.setItem('playerId',   playerId);
+    localStorage.setItem('roomCode', roomCode);
+    localStorage.setItem('username', username);
+    if (playerId)   localStorage.setItem('playerId', playerId);
     if (guestToken) localStorage.setItem('guestToken', guestToken);
 
     navigate(`/lobby/${roomCode}`);
@@ -20,12 +20,12 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/"                          element={<Landing onJoin={onJoin} />} />
-      <Route path="/start-game"                element={<RoomCard mode="create" onJoin={onJoin} />} />
-      <Route path="/join-game"                 element={<RoomCard mode="join"   onJoin={onJoin} />} />
-      <Route path="/lobby/:roomCode"           element={<Lobby />} />
-      <Route path="/room/:roomCode"            element={<Room />} />
-      <Route path="/room/:roomCode/game-over"  element={<GameOverRoute />} />
+      <Route path="/" element={<Landing onJoin={onJoin} />} />
+      <Route path="/start-game" element={<RoomCard mode="create" onJoin={onJoin} />} />
+      <Route path="/join-game" element={<RoomCard mode="join" onJoin={onJoin} />} />
+      <Route path="/lobby/:roomCode" element={<Lobby />} />
+      <Route path="/room/:roomCode" element={<Room />} />
+      <Route path="/room/:roomCode/game-over" element={<GameOverRoute />} />
     </Routes>
   );
 };
@@ -51,7 +51,7 @@ const GameOverRoute = () => {
       winnerName={state.winnerName}
       allHands={state.allHands || []}
       playerId={playerId}
-      onBack={() => navigate('/')}
+      onBack={() => navigate(`/lobby/${roomCode}`)}
     />
   );
 };

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './roomCard.css';
+import './LoginCard.css';
 import { API_URL } from '../../api.js';
 
 const HAND_SIZES = [7, 10, 13];
@@ -14,7 +14,7 @@ const PFP_LIST = [
 const pfpSrc = (name) =>
   new URL(`../../assets/pfp/${name}.jpeg`, import.meta.url).href;
 
-const RoomCard = ({ mode }) => {
+const LoginCard = ({ mode }) => {
     const [username, setUsername] = useState('');
     const [code, setCode] = useState('');
     const [generatedCode, setGeneratedCode] = useState(null);
@@ -244,4 +244,4 @@ const RoomCard = ({ mode }) => {
     );
 };
 
-export default RoomCard;
+export default LoginCard;
